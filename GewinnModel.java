@@ -24,7 +24,7 @@ public class GewinnModel{
         if(computerZahl == spielerZahl){
             rundenErgebnis += 20;
         }
-        if(spielerZahl ==(++computerZahl) || spielerZahl ==(--computerZahl)){
+        if(spielerZahl ==(computerZahl + 1) || spielerZahl ==(computerZahl - 1)){
             rundenErgebnis += 5;
         }
         else{

@@ -57,6 +57,10 @@ public class GewinnView extends JFrame {
         gesamtPunkteAnzahl.setFont(new Font("Arial", Font.PLAIN, 18));
 
         spielerFeld.setPreferredSize(new Dimension(100, 50));
+        spielerFeld.setHorizontalAlignment(JTextField.CENTER);
+        computerFeld.setHorizontalAlignment(JTextField.CENTER);
+        spielerFeld.setFont(new Font("Arial", Font.BOLD, 24));
+        computerFeld.setFont(new Font("Arial", Font.BOLD, 24));
         button.setBackground(Color.LIGHT_GRAY);
         button.setFocusable(false);
         computerFeld.setEnabled(false);

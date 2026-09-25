@@ -1,3 +1,4 @@
+import java.awt.*;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -35,8 +36,12 @@ public class GewinnController {
 
                 if (ergebnis > 0) {
                     view.rundenergebnisAnzeige.setText("+" + ergebnis);
+                    view.rundenergebnisAnzeige.setBackground(Color.green);
+                    view.gesamtPunkteAnzahl.setBackground(Color.green);
                 } else {
                     view.rundenergebnisAnzeige.setText("" + ergebnis);
+                    view.rundenergebnisAnzeige.setBackground(Color.red);
+                    view.gesamtPunkteAnzahl.setBackground(Color.red);
                 }
 
                 view.gesamtPunkteAnzahl.setText("Gesamtpunkte: " + model.getGesamtpunkte());
@@ -69,5 +74,7 @@ public class GewinnController {
         view.gesamtPunkteAnzahl.setText("Gesamtpunkte: "+ model.getGesamtpunkte());
         view.button.setEnabled(false);
 
+        view.gesamtPunkteAnzahl.setBackground(Color.WHITE);
+        view.rundenergebnisAnzeige.setBackground(Color.WHITE);
     }
 }

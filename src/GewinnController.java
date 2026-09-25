@@ -1,7 +1,7 @@
 import java.awt.*;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-
+//Abdell
 public class GewinnController {
     private GewinnModel model;
     private GewinnView view;

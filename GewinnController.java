@@ -31,6 +31,14 @@ public class GewinnController {
                     view.rundenergebnisAnzeige.setText("" + ergebnis);
             }
         }
+        view.button.addActionListener(new ActionListener({
+                public void actionPerformed(ActionEvent e){
+                    nocheinmalGeklickt();
+                }
+                                                   }
+                                               }
+        }
+        ));
         private void nocheinmalGeklickt()   {
                 view.spielerFeld.setText("");
                 view.computerFeld.setText("");

@@ -1,43 +1,55 @@
-public class GewinnModel{
+public class GewinnModel {
     private int gesamtpunkte;
     private int spielerZahl;
     private int computerZahl;
     private int rundenErgebnis;
 
-    public GewinnModel(){
+    public GewinnModel() {
         gesamtpunkte = 30;
         spielerZahl = 0;
         computerZahl = 0;
         rundenErgebnis = 0;
     }
-    public int getGesamtpunkte(){
+
+    public int getGesamtpunkte() {
         return gesamtpunkte;
     }
-    public int getComputerZahl(){
+    public void setGesamtpunkte(int punkte){
+        this.gesamtpunkte = punkte;
+    }
+
+    public int getComputerZahl() {
         return computerZahl;
     }
-    public int getRundenErgebnis(){
+
+    public int getRundenErgebnis() {
         return rundenErgebnis;
     }
-    public void berechneRunde(int spielerZahl){
-        int computerZahl = (int) (Math.random()*9);
-        if(computerZahl == spielerZahl){
-            rundenErgebnis += 20;
+
+    public void berechneRunde(int spielerZahl) {
+        this.spielerZahl = spielerZahl;
+        int diff = Math.abs(spielerZahl - computerZahl);
+
+        if (diff == 0) {
+            rundenErgebnis = 20;
+        } else if (diff == 1) {
+            rundenErgebnis = 5;
+        } else {
+            rundenErgebnis = -10;
         }
-        if(spielerZahl ==(computerZahl + 1) || spielerZahl ==(computerZahl - 1)){
-            rundenErgebnis += 5;
-        }
-        else{
-            rundenErgebnis -= 10;
-        }
+
+        gesamtpunkte += rundenErgebnis;
     }
-    public void berechneComputerZahl(){
-        computerZahl = (int)(Math.random() *9) +1;
+
+    public void berechneComputerZahl() {
+        computerZahl = (int) (Math.random() * 9) + 1;
     }
-    public boolean hatGewonnen(){
-        return rundenErgebnis >= 5;
+
+    public boolean hatGewonnen() {
+        return gesamtpunkte >= 50;
     }
-    public boolean hatVerloren(){
-        return rundenErgebnis < 5;
+
+    public boolean hatVerloren() {
+        return gesamtpunkte <= 0;
     }
 }

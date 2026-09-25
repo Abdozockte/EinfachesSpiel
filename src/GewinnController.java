@@ -38,6 +38,16 @@ public class GewinnController {
                 } else {
                     view.rundenergebnisAnzeige.setText("" + ergebnis);
                 }
+
+                view.gesamtPunkteAnzahl.setText("Gesamtpunkte: " + model.getGesamtpunkte());
+                if(model.getGesamtpunkte() <= 0){
+                    view.spielerFeld.setEnabled(false);
+                    view.rundenergebnisAnzeige.setText("Verloren!");
+                }
+                if(model.getGesamtpunkte() >= 100){
+                    view.spielerFeld.setEnabled(false);
+                    view.rundenergebnisAnzeige.setText("Gewonnen!");
+                }
             }
         });
 
@@ -49,8 +59,11 @@ public class GewinnController {
     }
 
     public void nocheinmalGeklickt() {
+        view.spielerFeld.setEnabled(true);
         view.spielerFeld.setText("");
         view.computerFeld.setText("");
         view.rundenergebnisAnzeige.setText("Tippe eine Zahl von 1 bis 9");
+        model.setGesamtpunkte(30);
+        view.gesamtPunkteAnzahl.setText("Gesamtpunkte: "+ model.getGesamtpunkte());
     }
 }

@@ -15,11 +15,10 @@ public class GewinnView extends JFrame {
     JTextField computerFeld = new JTextField();
 
     JPanel labels = new JPanel(new GridLayout(4, 2));
-    JPanel eingabePanel = new JPanel(new GridLayout(1,2));
+    JPanel eingabePanel = new JPanel(new GridLayout(1, 2));
 
     JPanel buttonPanel = new JPanel();
     JButton button = new JButton("Noch einmal!");
-
 
     public GewinnView() {
 
@@ -36,36 +35,32 @@ public class GewinnView extends JFrame {
         computerLabel.setBackground(Color.LIGHT_GRAY);
         computerLabel.setOpaque(true);
 
-
         zahlLabel.setForeground(Color.BLACK);
         zahlLabel.setBackground(Color.LIGHT_GRAY);
         zahlLabel.setOpaque(true);
-
 
         gesamtpunkte.setForeground(Color.BLACK);
         gesamtpunkte.setBackground(Color.LIGHT_GRAY);
         gesamtpunkte.setOpaque(true);
 
-
         gesamtPunkteAnzahl.setForeground(Color.BLACK);
         gesamtPunkteAnzahl.setBackground(Color.WHITE);
         gesamtPunkteAnzahl.setOpaque(true);
-
 
         rundenergebnisAnzeige.setForeground(Color.BLACK);
         rundenergebnisAnzeige.setBackground(Color.white);
         rundenergebnisAnzeige.setOpaque(true);
 
-
-        rundenergebnis.setFont(new Font("Arial", Font.PLAIN,20));
-        gesamtpunkte.setFont(new Font("Arial", Font.PLAIN,20));
-        rundenergebnisAnzeige.setFont(new Font("Arial", Font.PLAIN,18));
-        gesamtPunkteAnzahl.setFont(new Font("Arial", Font.PLAIN,18));
-
+        rundenergebnis.setFont(new Font("Arial", Font.PLAIN, 20));
+        gesamtpunkte.setFont(new Font("Arial", Font.PLAIN, 20));
+        rundenergebnisAnzeige.setFont(new Font("Arial", Font.PLAIN, 18));
+        gesamtPunkteAnzahl.setFont(new Font("Arial", Font.PLAIN, 18));
 
         spielerFeld.setPreferredSize(new Dimension(100, 50));
         button.setBackground(Color.LIGHT_GRAY);
         button.setFocusable(false);
+        computerFeld.setEnabled(false);
+
         labels.add(rundenergebnis);
         labels.add(gesamtpunkte);
         labels.add(rundenergebnisAnzeige);
@@ -77,18 +72,10 @@ public class GewinnView extends JFrame {
         eingabePanel.add(computerFeld);
         buttonPanel.add(button);
 
-
         panel.add(labels, BorderLayout.NORTH);
         panel.add(eingabePanel, BorderLayout.CENTER);
         panel.add(buttonPanel, BorderLayout.SOUTH);
         this.add(panel);
         this.setVisible(true);
     }
-
-
-    public static void main(String[] args) {
-        new GewinnView();
-
-    }
-
 }

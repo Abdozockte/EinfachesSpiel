@@ -43,10 +43,12 @@ public class GewinnController {
                 if(model.getGesamtpunkte() <= 0){
                     view.spielerFeld.setEnabled(false);
                     view.rundenergebnisAnzeige.setText("Verloren!");
+                    view.button.setEnabled(true);
                 }
                 if(model.getGesamtpunkte() >= 100){
                     view.spielerFeld.setEnabled(false);
                     view.rundenergebnisAnzeige.setText("Gewonnen!");
+                    view.button.setEnabled(true);
                 }
             }
         });
@@ -65,5 +67,7 @@ public class GewinnController {
         view.rundenergebnisAnzeige.setText("Tippe eine Zahl von 1 bis 9");
         model.setGesamtpunkte(30);
         view.gesamtPunkteAnzahl.setText("Gesamtpunkte: "+ model.getGesamtpunkte());
+        view.button.setEnabled(false);
+
     }
 }
